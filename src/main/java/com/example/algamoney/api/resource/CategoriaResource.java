@@ -48,9 +48,8 @@ public class CategoriaResource {
 
 		return ResponseEntity.created(uri).body(categoriaSalva); // Resposta informando que o dado foi salvo e definindo
 																	// o status
-
 	}
-
+	
 	@GetMapping("/{codigo}") // para que busque o codigo após o categoria/ na URI
 	public Optional<Categoria> buscarPeloCodigo(@PathVariable Long codigo) { // Path parametro do caminho da URI
 

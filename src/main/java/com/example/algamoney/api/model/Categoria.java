@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -18,7 +19,8 @@ public class Categoria {
 	private long codigo;
 	
 	@NotNull
-	@NotBlank(message = "Nome está Vazio")
+	@NotBlank
+	@Size(min = 3, max = 50)
 	private String nome;
 	
 	public long getCodigo() {
