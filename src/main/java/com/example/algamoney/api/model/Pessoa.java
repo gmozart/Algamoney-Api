@@ -1,5 +1,6 @@
 package com.example.algamoney.api.model;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,28 @@ public class Pessoa {
 	@Size(min = 8, max = 50)
 	private String nome;
 	
+	@Embedded
+	private Endereço endereço;
+	
+	@NotNull
+	private Boolean ativo;
+	
+
+	public Endereço getEndereço() {
+		return endereço;
+	}
+
+	public void setEndereço(Endereço endereço) {
+		this.endereço = endereço;
+	}
+
+	public Boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
+	}
 
 	public long getCodigo() {
 		return codigo;
